@@ -17,6 +17,7 @@ export interface Response {
 //Recovery
 app.post("/store", async (req, res) => {
     const {name, packet} = req.body;
+    
     try {
         await push(name, packet);
         res.json({accepted: true} as Response);
